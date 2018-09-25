@@ -19,6 +19,6 @@
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
-    "serve": "6"
+    "serve": "^7.2.0"
   }
 }

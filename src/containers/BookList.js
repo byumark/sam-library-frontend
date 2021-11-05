@@ -1,28 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import BookIcon from "@material-ui/icons/Book";
-import DeleteIcon from "@material-ui/icons/Delete";
-
-const styles = theme => ({
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    width: "50%"
-  }
-});
+import React from 'react'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import Avatar from '@mui/material/Avatar'
+import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
+import BookIcon from '@mui/icons-material/Book'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 const BookItem = props => {
-  const { deleteBook } = props;
+  const { deleteBook } = props
 
   return (
     <ListItem>
@@ -41,16 +30,14 @@ const BookItem = props => {
         </IconButton>
       </ListItemSecondaryAction>
     </ListItem>
-  );
-};
+  )
+}
 
 const BookList = props => {
-  const { classes, books, deleteBook } = props;
+  const { books, deleteBook } = props
   return (
     <div>
-      <Typography variant="title" className={classes.title}>
-        Books
-      </Typography>
+      <Typography variant="h6">Books</Typography>
       {props.books.length === 0 ? (
         <p>Sorry, no books in the library.</p>
       ) : (
@@ -61,11 +48,7 @@ const BookList = props => {
         </List>
       )}
     </div>
-  );
-};
+  )
+}
 
-BookList.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(BookList);
+export default BookList

@@ -1,15 +1,11 @@
-import axios from "axios";
+import path from 'path'
 
 export default {
-	getSiteData: () => ({
-		title: "React Static"
-	}),
-	getRoutes: async () => {
-		return [
-			{
-				path: "/",
-				component: "src/pages/index.js"
-			}
-		];
-	}
-};
+  plugins: [
+    [
+      {
+        location: path.resolve('./src/pages'),
+      },
+    ],
+  ],
+}
